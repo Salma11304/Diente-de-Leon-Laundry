@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>Diente de León Laundry</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff4e8;
+            color: #222;
+        }
+
+        /* =========================
+           WARNA UTAMA
+        ========================= */
+
+        :root {
+            --orange: #f28a20;
+            --orange-dark: #d96f08;
+            --orange-light: #fff0dc;
+            --cream: #fff8ef;
+            --white: #ffffff;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: var(--white);
+            padding: 20px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 5px solid var(--orange);
+        }
+
+        .logo img {
+            width: 210px;
+            max-width: 100%;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #f28a20,
+                    #ffb35c
+                );
+
+            padding: 55px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 40px;
+            overflow: hidden;
+        }
+
+        .hero-text {
+            width: 55%;
+            color: white;
+        }
+
+        .hero-text .small-title {
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(55px, 7vw, 95px);
+            line-height: .9;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: -3px;
+        }
+
+        .hero-text h2 {
+            font-size: clamp(30px, 4vw, 50px);
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .hero-text p {
+            margin-top: 25px;
+            font-size: 21px;
+            line-height: 1.5;
+            max-width: 650px;
+        }
+
+        .hero-image {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 25px;
+
+            box-shadow: 0 15px 35px rgba(0,0,0,.2);
+        }
+
+
+        /* =========================
+           ANTAR JEMPUT
+        ========================= */
+
+        .pickup {
+            background: white;
+            padding: 30px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            border-bottom: 5px solid var(--orange);
+        }
+
+        .pickup-box {
+            background: var(--orange-light);
+            padding: 20px 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .pickup-box h3 {
+            font-size: 27px;
+            color: var(--orange-dark);
+            margin-bottom: 5px;
+        }
+
+        .pickup-box p {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .pickup-arrow {
+            font-size: 45px;
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           LAYANAN
+        ========================= */
+
+        .services {
+            padding: 55px 5%;
+            background: var(--cream);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 46px;
+            color: var(--orange-dark);
+            font-weight: 900;
+        }
+
+        .section-title p {
+            margin-top: 8px;
+            font-size: 20px;
+            color: #555;
+        }
+
+
+        /* GRID 12 KATEGORI */
+
+        .service-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            max-width: 1400px;
+            margin: auto;
+        }
+
+
+        /* CARD */
+
+        .service-card {
+            background: white;
+
+            border: 3px solid #ffd7aa;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,.08);
+
+            transition: .25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 10px 25px rgba(242,138,32,.2);
+        }
+
+
+        /* NOMOR */
+
+        .service-title {
+            background: var(--orange);
+
+            color: white;
+
+            padding: 13px 15px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .number {
+            background: white;
+            color: var(--orange-dark);
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 21px;
+            font-weight: 900;
+        }
+
+        .service-title h3 {
+            font-size: 23px;
+            font-weight: 900;
+        }
+
+
+        /* GAMBAR */
+
+        .service-image {
+            width: 100%;
+            height: 180px;
+
+            object-fit: cover;
+        }
+
+
+        /* ISI */
+
+        .service-content {
+            padding: 18px 20px 22px;
+        }
+
+        .service-content ul {
+            list-style: none;
+        }
+
+        .service-content li {
+            font-size: 16px;
+            line-height: 1.45;
+
+            margin-bottom: 7px;
+
+            padding-left: 18px;
+
+            position: relative;
+        }
+
+        .service-content li::before {
+            content: "•";
+
+            position: absolute;
+            left: 0;
+
+            color: var(--orange);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           KILOAN
+        ========================= */
+
+        .kiloan {
+            background: white;
+            padding: 65px 7%;
+        }
+
+        .kiloan-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .kiloan-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .kiloan-title h2 {
+            color: var(--orange-dark);
+            font-size: 45px;
+            font-weight: 900;
+        }
+
+        .kiloan-title p {
+            font-size: 19px;
+            margin-top: 8px;
+        }
+
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .price-card {
+            background: var(--orange-light);
+
+            border: 3px solid #ffd1a0;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+        .price-card h3 {
+            font-size: 25px;
+            color: var(--orange-dark);
+            margin-bottom: 18px;
+        }
+
+        .price-main {
+            font-size: 40px;
+            font-weight: 900;
+
+            color: #222;
+        }
+
+        .price-main span {
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .price-card p {
+            margin-top: 12px;
+            font-size: 17px;
+        }
+
+        .express {
+            margin-top: 18px !important;
+
+            background: var(--orange);
+
+            color: white;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            font-size: 18px !important;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           SPECIAL TREATMENT
+        ========================= */
+
+        .special {
+            padding: 45px 7%;
+
+            background: var(--cream);
+        }
+
+        .special-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .special-box {
+            border-radius: 20px;
+            padding: 25px 30px;
+
+            color: white;
+
+            background: var(--orange);
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .special-icon {
+            font-size: 50px;
+        }
+
+        .special-box h3 {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .special-box p {
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background: var(--orange-dark);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 65px 20px;
+        }
+
+        .cta h2 {
+            font-size: 45px;
+            font-weight: 900;
+        }
+
+        .cta p {
+            margin-top: 12px;
+            font-size: 20px;
+        }
+
+        .wa-button {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 17px 35px;
+
+            background: white;
+
+            color: var(--orange-dark);
+
+            text-decoration: none;
+
+            font-size: 21px;
+
+            font-weight: 900;
+
+            border-radius: 12px;
+        }
+
+        .wa-button:hover {
+            background: #fff0dc;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: white;
+
+            padding: 35px 7% 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            width: 200px;
+        }
+
+        footer h3 {
+            color: var(--orange-dark);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .copyright {
+            text-align: center;
+
+            border-top: 1px solid #ddd;
+
+            margin-top: 30px;
+            padding-top: 18px;
+
+            font-size: 14px;
+            color: #777;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .service-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+
+            .pickup {
+                flex-direction: column;
+            }
+
+            .pickup-arrow {
+                transform: rotate(90deg);
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .special-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo img {
+                margin: auto;
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            .hero-text h1 {
+                font-size: 52px;
+            }
+
+            .hero-text h2 {
+                font-size: 30px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2,
+            .kiloan-title h2,
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .service-image {
+                height: 210px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        <img src="logo.png" alt="Diente de León Laundry">
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#harga">Harga</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            Nikmati layanan
+        </div>
+
+        <h1>
+            GRATIS
+        </h1>
+
+        <h2>
+            ANTAR-JEMPUT
+        </h2>
+
+        <p>
+            Kami jemput, kami antar,
+            Anda tinggal santai!
+        </p>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=1000&q=80"
+            alt="Laundry"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PICK UP
+========================= -->
+
+<section class="pickup">
+
+    <div class="pickup-box">
+
+        <h3>🛵 GRATIS JEMPUT</h3>
+
+        <p>
+            Tidak perlu datang ke laundry.
+            Kami yang datang ke tempatmu.
+        </p>
+
+    </div>
+
+
+    <div class="pickup-arrow">
+        →
+    </div>
+
+
+    <div class="pickup-box">
+
+        <h3>🚐 GRATIS ANTAR</h3>
+
+        <p>
+            Laundry selesai?
+            Kami antar kembali ke tempatmu.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LAYANAN
+========================= -->
+
+<section class="services" id="layanan">
+
+    <div class="section-title">
+
+        <h2>Layanan Kami</h2>
+
+        <p>
+            Tersedia berbagai layanan laundry
+            sesuai kebutuhan kamu.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+        <!-- 1 KILOAN -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+
+                <div class="number">1</div>
+
+                <h3>KILOAN</h3>
+
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=800&q=80"
+                alt="Laundry Kiloan"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Cuci + Setrika</li>
+                    <li>Cuci + Setrika Express</li>
+                    <li>Cuci Saja</li>
+                    <li>Setrika Saja</li>
+                    <li>Pakaian Bayi</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 2 PAKAIAN SATUAN -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">2</div>
+                <h3>PAKAIAN SATUAN</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=80"
+                alt="Pakaian Satuan"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Kaos Lengan Panjang</li>
+                    <li>Kaos Lengan Panjang + Treatment</li>
+                    <li>Kemeja Lengan Pendek</li>
+                    <li>Baju Wisuda</li>
+                    <li>Baju Ihram</li>
+                    <li>Topi / Belt</li>
+                    <li>Mukena (Set)</li>
+                    <li>Sweater</li>
+                    <li>Rok Panjang</li>
+                    <li>Jaket Tebal</li>
+                    <li>Jaket Kulit</li>
+                    <li>Selimut Tebal</li>
+                    <li>Sprei Sedang</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 3 BED COVER -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">3</div>
+                <h3>BED COVER</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80"
+                alt="Bed Cover"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Bed Cover Besar / King Size</li>
+                    <li>Bed Cover Jumbo</li>
+                    <li>Bed Cover Kecil / Single</li>
+                    <li>Bed Cover Queen</li>
+                    <li>Bed Cover Sedang / Double</li>
+                    <li>Bed Cover / Selimut Bayi</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 4 SEPATU -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">4</div>
+                <h3>SEPATU</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                alt="Sepatu"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Sandal</li>
+                    <li>High Heels</li>
+                    <li>Sepatu Anak</li>
+                    <li>Sepatu Boots</li>
+                    <li>Sepatu Olahraga</li>
+                    <li>Sepatu Suede / Kanvas</li>
+                    <li>Sepatu Kulit</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 5 TAS -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">5</div>
+                <h3>TAS</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
+                alt="Tas"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Tas Kecil</li>
+                    <li>Tas Wanita / Hand Bag</li>
+                    <li>Tas Kulit</li>
+                    <li>Tas Ransel / Laptop</li>
+                    <li>Tas Perlengkapan Bayi</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 6 STROLLER -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">6</div>
+                <h3>STROLLER</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=800&q=80"
+                alt="Stroller"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Stroller Kecil / Kabin</li>
+                    <li>Stroller Besar</li>
+                    <li>Stroller Pad</li>
+                    <li>Stroller Sepeda</li>
+                    <li>Stroller Twins</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 7 DRY CLEAN -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">7</div>
+                <h3>DRY CLEAN</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=800&q=80"
+                alt="Dry Clean"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Dry Clean Jas</li>
+                    <li>Dry Clean Setelan</li>
+                    <li>Dry Clean Gaun Panjang</li>
+                    <li>Dry Clean Gaun Pendek</li>
+                    <li>Dry Clean Gaun Anak</li>
+                    <li>Dry Clean Rok Panjang</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 8 KARPET -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">8</div>
+                <h3>KARPET</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=800&q=80"
+                alt="Karpet"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Karpet Bulu Tebal</li>
+                    <li>Karpet Kantor</li>
+                    <li>Karpet Tebal</li>
+                    <li>Karpet Tipis</li>
+                    <li>Karpet Masjid</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 9 BONEKA -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">9</div>
+                <h3>BONEKA</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=800&q=80"
+                alt="Boneka"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Boneka 0–20 cm</li>
+                    <li>Boneka 20–40 cm</li>
+                    <li>Boneka 40–60 cm</li>
+                    <li>Boneka 60–80 cm</li>
+                    <li>Boneka 80–100 cm</li>
+                    <li>Boneka Bantal Kecil</li>
+                    <li>Boneka Jumbo</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 10 BANTAL -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">10</div>
+                <h3>BANTAL / GULING & BED</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+                alt="Bantal Guling"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Bantal / Guling</li>
+                    <li>Kasur Busa Kecil</li>
+                    <li>Kasur Busa Besar</li>
+                    <li>Kasur Palembang Kecil</li>
+                    <li>Kasur / Alas Keranjang Bayi</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 11 HELM -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">11</div>
+                <h3>HELM</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
+                alt="Helm"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Helm Full Face</li>
+                    <li>Helm Half Face</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 12 GORDYN -->
+
+        <div class="service-card">
+
+            <div class="service-title">
+                <div class="number">12</div>
+                <h3>GORDYN</h3>
+            </div>
+
+            <img
+                class="service-image"
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+                alt="Gordyn"
+            >
+
+            <div class="service-content">
+
+                <ul>
+                    <li>Gordyn Tebal (m²)</li>
+                    <li>Gordyn Tipis (m²)</li>
+                    <li>List Gordyn (m²)</li>
+                    <li>Vitrage (m²)</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     HARGA KILOAN
+========================= -->
+
+<section class="kiloan" id="harga">
+
+    <div class="kiloan-container">
+
+        <div class="kiloan-title">
+
+            <h2>Harga Laundry Kiloan</h2>
+
+            <p>
+                Pilih layanan sesuai kebutuhanmu
+            </p>
+
+        </div>
+
+
+        <div class="price-grid">
+
+
+            <!-- CUCI SETRIKA -->
+
+            <div class="price-card">
+
+                <h3>🧺 Cuci + Setrika</h3>
+
+                <div class="price-main">
+                    Rp9.000
+                    <span>/kg</span>
+                </div>
+
+                <p>
+                    Layanan reguler
+                </p>
+
+                <p class="express">
+                    EXPRESS Rp18.000/kg
+                </p>
+
+            </div>
+
+
+
+            <!-- CUCI / SETRIKA -->
+
+            <div class="price-card">
+
+                <h3>👕 Cuci / Setrika</h3>
+
+                <div class="price-main">
+                    Rp7.500
+                    <span>/kg</span>
+                </div>
+
+                <p>
+                    Cuci saja atau setrika saja
+                </p>
+
+                <p class="express">
+                    EXPRESS Rp15.000/kg
+                </p>
+
+            </div>
+
+
+
+            <!-- PAKAIAN BAYI -->
+
+            <div class="price-card">
+
+                <h3>👶 Pakaian Bayi</h3>
+
+                <div class="price-main">
+                    Rp12.000
+                    <span>/kg</span>
+                </div>
+
+                <p>
+                    Khusus pakaian bayi
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SPECIAL
+========================= -->
+
+<section class="special">
+
+    <div class="special-container">
+
+
+        <div class="special-box">
+
+            <div class="special-icon">
+                ✨
+            </div>
+
+            <div>
+
+                <h3>Special Treatment</h3>
+
+                <p>
+                    Tersedia perawatan khusus
+                    untuk kebutuhan laundry tertentu.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="special-box">
+
+            <div class="special-icon">
+                ⚡
+            </div>
+
+            <div>
+
+                <h3>Cuci Express</h3>
+
+                <p>
+                    Butuh cepat?
+                    Gunakan layanan express kami.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <h2>
+        Laundry Menumpuk?
+    </h2>
+
+    <p>
+        Biar kami yang urus. Kamu tinggal santai!
+    </p>
+
+    <a
+        class="wa-button"
+        href="https://wa.me/6282258880468?text=Halo%20Diente%20de%20Leon%20Laundry,%20saya%20ingin%20bertanya%20tentang%20layanan%20laundry."
+        target="_blank"
+    >
+        💬 Hubungi WhatsApp
+    </a>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="kontak">
+
+    <div class="footer-container">
+
+
+        <div class="footer-logo">
+
+            <img
+                src="logo.png"
+                alt="Diente de León Laundry"
+            >
+
+        </div>
+
+
+        <div>
+
+            <h3>Alamat</h3>
+
+            <p>
+                📍 Ruko AT 15 No. 10
+                <br>
+                Harapan Indah
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Hubungi Kami</h3>
+
+            <p>
+                📱 WhatsApp
+                <br>
+
+                <strong>
+                    0822-5888-0468
+                </strong>
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Diente de León Laundry.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
